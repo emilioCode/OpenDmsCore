@@ -2,6 +2,7 @@
 using OpenDmsCore.Core.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OpenDmsCore.Core.Services
@@ -20,7 +21,7 @@ namespace OpenDmsCore.Core.Services
             return await _unitOfWork.TeamRepository.GetAll();
         }
 
-        public Task<Team> GetTeam(int id)
+        public Task<Team> GetTeamById(int id)
         {
             throw new NotImplementedException();
         }
@@ -40,5 +41,11 @@ namespace OpenDmsCore.Core.Services
             throw new NotImplementedException();
         }
 
+        public async Task<IEnumerable<Team>> GetTeamsByCompanyId(int id)
+        {
+            var teams = await _unitOfWork.TeamRepository.GetAll();
+            teams = teams.ToList().Where(x => x.EntityId == id);
+            return teams;
+        }
     }
 }
