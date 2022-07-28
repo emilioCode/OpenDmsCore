@@ -9,11 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Configurations\" />
     <Folder Include="Filters\" />
     <Folder Include="Mappings\" />
     <Folder Include="Validators\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>

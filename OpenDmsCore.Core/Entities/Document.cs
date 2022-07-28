@@ -2,9 +2,8 @@
 
 namespace OpenDmsCore.Core.Entities
 {
-    public partial class Document
+    public partial class Document : BaseEntity
     {
-        public int Id { get; set; }
         public string Filename { get; set; }
         public string Extension { get; set; }
         public float Size { get; set; }
