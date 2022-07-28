@@ -1,9 +1,6 @@
 ﻿using OpenDmsCore.Core.Entities;
 using OpenDmsCore.Core.Interfaces;
 using OpenDmsCore.Infrastructure.Data;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OpenDmsCore.Infrastructure.Repositories
@@ -13,7 +10,7 @@ namespace OpenDmsCore.Infrastructure.Repositories
         private readonly OPEN_DMSContext _context;
 
         private readonly IRepository<Document> _documentRepository;
-        private readonly IRepository<Group> _groupRepository;
+        private readonly IRepository<Company> _groupRepository;
         private readonly IRepository<Mimetype> _mimeTypeRepository;
         private readonly IRepository<Team> _teamRepository;
         private readonly IRepository<User> _userRepository;
@@ -26,7 +23,7 @@ namespace OpenDmsCore.Infrastructure.Repositories
 
         public IRepository<Document> DocumentRepository => _documentRepository ?? new BaseRepository<Document>(_context);
 
-        public IRepository<Group> GroupRepository => _groupRepository ?? new BaseRepository<Group>(_context);
+        public IRepository<Company> GroupRepository => _groupRepository ?? new BaseRepository<Company>(_context);
 
         public IRepository<Mimetype> MimetypeRepository => _mimeTypeRepository ?? new BaseRepository<Mimetype>(_context);
 

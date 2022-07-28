@@ -16,7 +16,7 @@ namespace OpenDmsCore.Infrastructure.Data
         }
 
         public virtual DbSet<Document> Documents { get; set; }
-        public virtual DbSet<Group> Groups { get; set; }
+        public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Mimetype> Mimetypes { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
         public virtual DbSet<User> Users { get; set; }

@@ -7,7 +7,7 @@ namespace OpenDmsCore.Core.Interfaces
     public interface IUnitOfWork : IDisposable
     {
         IRepository<Document> DocumentRepository { get; }
-        IRepository<Group> GroupRepository { get; }
+        IRepository<Company> GroupRepository { get; }
         IRepository<Mimetype> MimetypeRepository { get; }
         IRepository<Team> TeamRepository { get; }
         IRepository<User> UserRepository { get; }

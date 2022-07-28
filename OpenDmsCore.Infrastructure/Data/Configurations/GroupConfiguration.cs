@@ -4,9 +4,9 @@ using OpenDmsCore.Core.Entities;
 
 namespace OpenDmsCore.Infrastructure.Data.Configurations
 {
-    internal class GroupConfiguration : IEntityTypeConfiguration<Group>
+    internal class GroupConfiguration : IEntityTypeConfiguration<Company>
     {
-        public void Configure(EntityTypeBuilder<Group> builder)
+        public void Configure(EntityTypeBuilder<Company> builder)
         {
             var entity = builder;
             entity.ToTable("entities");

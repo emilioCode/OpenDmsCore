@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using OpenDmsCore.Core.Interfaces;
+using OpenDmsCore.Core.Services;
 using OpenDmsCore.Infrastructure.Data;
 using OpenDmsCore.Infrastructure.Repositories;
 using System;
@@ -37,6 +38,7 @@ namespace OpenDmsCore.Api
             );
 
             //dependecy injection with interfaces
+            services.AddTransient<ITeamService, TeamService>();
 
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
 
