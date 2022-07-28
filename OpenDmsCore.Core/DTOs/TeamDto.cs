@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OpenDmsCore.Core.DTOs
+﻿namespace OpenDmsCore.Core.DTOs
 {
     public class TeamDto
     {
