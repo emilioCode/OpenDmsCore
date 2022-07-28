@@ -1,14 +1,10 @@
 ﻿namespace OpenDmsCore.Api.Responses
 {
-    public class ApiResponse<T>
+    public class ApiResponse
     {
-        public ApiResponse(T data)
-        {
-            Data = data;
-        }
-        public T Data { get; set; }
-        public string Code { get; set; }
-        public string Message { get; set; }
+        public string Code { get; set; } = "";
+        public string Message { get; set; } = "";
         public bool Success { get; set; } = false;
+        public object Data { get; set; }
     }
 }
