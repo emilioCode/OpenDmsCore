@@ -2,9 +2,7 @@
 using OpenDmsCore.Core.Entities;
 using OpenDmsCore.Core.Interfaces;
 using OpenDmsCore.Infrastructure.Data;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OpenDmsCore.Infrastructure.Repositories

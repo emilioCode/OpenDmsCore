@@ -39,6 +39,8 @@ namespace OpenDmsCore.Api
             //dependecy injection with interfaces
 
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
