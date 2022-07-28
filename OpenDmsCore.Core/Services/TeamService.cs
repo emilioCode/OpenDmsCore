@@ -26,17 +26,17 @@ namespace OpenDmsCore.Core.Services
             throw new NotImplementedException();
         }
 
-        public Task InsertTeam(Team team)
+        public async Task InsertTeam(Team team)
+        {
+            await _unitOfWork.TeamRepository.Add(team);
+        }
+
+        public async Task<bool> UpdateTeam(Team team)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdateTeam(Team team)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> DeleteTeam(int id)
+        public async Task<bool> DeleteTeam(int id)
         {
             throw new NotImplementedException();
         }
