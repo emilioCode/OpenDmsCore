@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace OpenDmsCore.Core.Entities
 {
-    public partial class User
+    public partial class User : BaseEntity
     {
-        public int Id { get; set; }
         public string CompleteName { get; set; }
         public string Description { get; set; }
         public string UserAccount { get; set; }

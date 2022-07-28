@@ -7,7 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using OpenDmsCore.Core.Interfaces;
 using OpenDmsCore.Infrastructure.Data;
+using OpenDmsCore.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +35,10 @@ namespace OpenDmsCore.Api
             services.AddDbContext<OPEN_DMSContext>(options => options.UseMySQL(
                 Configuration.GetConnectionString("OPEN_DMS"))
             );
+
+            //dependecy injection with interfaces
+
+            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace OpenDmsCore.Core.Entities
 {
-    public partial class Team
+    public partial class Team : BaseEntity
     {
-        public int Id { get; set; }
         public int EntityId { get; set; }
         public string TeamName { get; set; }
         public string PathRoot { get; set; }
