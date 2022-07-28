@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenDmsCore.Core\OpenDmsCore.Core.csproj" />
+    <ProjectReference Include="..\OpenDmsCore.Infrastructure\OpenDmsCore.Infrastructure.csproj" />
+  </ItemGroup>
+
+
+</Project>
