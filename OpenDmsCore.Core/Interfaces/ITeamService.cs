@@ -9,7 +9,8 @@ namespace OpenDmsCore.Core.Interfaces
     public interface ITeamService
     {
         Task<IEnumerable<Team>> GetTeams();
-        Task<Team> GetTeam(int id);
+        Task<Team> GetTeamById(int id);
+        Task<IEnumerable<Team>> GetTeamsByCompanyId(int id);
         Task InsertTeam(Team team);
         Task<bool> UpdateTeam(Team team);
         Task<bool> DeleteTeam(int id);

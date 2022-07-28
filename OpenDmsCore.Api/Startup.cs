@@ -30,7 +30,12 @@ namespace OpenDmsCore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    // Ignore the circular reference error
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                });
 
             //ConnectionStrings for Dbcontexts
             services.AddDbContext<OPEN_DMSContext>(options => options.UseMySQL(
