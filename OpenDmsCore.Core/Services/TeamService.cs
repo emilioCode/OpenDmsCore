@@ -43,9 +43,7 @@ namespace OpenDmsCore.Core.Services
 
         public async Task<IEnumerable<Team>> GetTeamsByCompanyId(int id)
         {
-            var teams = await _unitOfWork.TeamRepository.GetAll();
-            teams = teams.ToList().Where(x => x.EntityId == id);
-            return teams;
+            return await _unitOfWork.TeamRepository.GetTeamsByCompanyId(id);
         }
     }
 }
