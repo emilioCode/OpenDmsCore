@@ -10,7 +10,7 @@ namespace OpenDmsCore.Infrastructure.Repositories
     public class BaseRepository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly OPEN_DMSContext _context;
-        private DbSet<T> _entities;
+        protected DbSet<T> _entities;
         public BaseRepository(OPEN_DMSContext context)
         {
             _context = context;
@@ -20,14 +20,12 @@ namespace OpenDmsCore.Infrastructure.Repositories
         public async Task Add(T entity)
         {
             await _entities.AddAsync(entity);
-            await _context.SaveChangesAsync();
         }
 
         public async Task Delete(int id)
         {
             T entity = await GetById(id);
             _context.Remove<T>(entity);
-            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<T>> GetAll()
@@ -40,10 +38,9 @@ namespace OpenDmsCore.Infrastructure.Repositories
             return await _entities.FindAsync(id);
         }
 
-        public async Task Update(T entity)
+        public void Update(T entity)
         {
             _entities.Update(entity);
-            await _context.SaveChangesAsync();
         }
     }
 }

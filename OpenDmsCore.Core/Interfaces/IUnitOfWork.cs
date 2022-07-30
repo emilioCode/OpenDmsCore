@@ -9,10 +9,10 @@ namespace OpenDmsCore.Core.Interfaces
         IRepository<Document> DocumentRepository { get; }
         IRepository<Company> GroupRepository { get; }
         IRepository<Mimetype> MimetypeRepository { get; }
-        IRepository<Team> TeamRepository { get; }
+        ITeamRepository TeamRepository { get; }
         IRepository<User> UserRepository { get; }
 
         void SaveChanges();
-        Task SAveChangesAsync();
+        Task SaveChangesAsync();
     }
 }

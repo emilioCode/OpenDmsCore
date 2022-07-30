@@ -39,6 +39,11 @@ namespace OpenDmsCore.Api
                 {
                     // Ignore the circular reference error
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                })
+                .ConfigureApiBehaviorOptions(options =>
+                {
+                    // To disable the validation MOdalState implicitly in he Controleer with ApiController's decorator to custom the error response
+                    options.SuppressModelStateInvalidFilter = true;
                 });
 
             //ConnectionStrings for Dbcontexts

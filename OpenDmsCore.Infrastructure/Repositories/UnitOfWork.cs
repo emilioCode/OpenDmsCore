@@ -12,7 +12,7 @@ namespace OpenDmsCore.Infrastructure.Repositories
         private readonly IRepository<Document> _documentRepository;
         private readonly IRepository<Company> _groupRepository;
         private readonly IRepository<Mimetype> _mimeTypeRepository;
-        private readonly IRepository<Team> _teamRepository;
+        private readonly ITeamRepository _teamRepository;
         private readonly IRepository<User> _userRepository;
 
 
@@ -27,7 +27,7 @@ namespace OpenDmsCore.Infrastructure.Repositories
 
         public IRepository<Mimetype> MimetypeRepository => _mimeTypeRepository ?? new BaseRepository<Mimetype>(_context);
 
-        public IRepository<Team> TeamRepository => _teamRepository ?? new BaseRepository<Team>(_context);
+        public ITeamRepository TeamRepository => _teamRepository ?? new TeamRepository(_context);
 
         public IRepository<User> UserRepository => _userRepository ?? new BaseRepository<User>(_context);
 
@@ -44,7 +44,7 @@ namespace OpenDmsCore.Infrastructure.Repositories
             _context.SaveChanges();
         }
 
-        public async Task SAveChangesAsync()
+        public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
         }
